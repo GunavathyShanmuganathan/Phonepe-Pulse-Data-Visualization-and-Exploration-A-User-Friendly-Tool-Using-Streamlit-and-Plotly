@@ -139,7 +139,7 @@ States_List=Year_PaymentMode['State'].unique()
 State_groupby_YP=Year_PaymentMode.groupby('State')
 Year_PaymentMode_Table=State_groupby_YP.sum()
 Year_PaymentMode_Table['states']=States_List
-del Year_PaymentMode_Table['Quarter'] # ylgnbu', 'ylorbr', 'ylorrd teal
+del Year_PaymentMode_Table['Quarter'] 
 del Year_PaymentMode_Table['Year']
 Year_PaymentMode_Table = Year_PaymentMode_Table.sort_values(by=['Total_Transactions_count'])
 fig2= px.bar(Year_PaymentMode_Table, x='states', y='Total_Transactions_count',color="Total_Transactions_count",
