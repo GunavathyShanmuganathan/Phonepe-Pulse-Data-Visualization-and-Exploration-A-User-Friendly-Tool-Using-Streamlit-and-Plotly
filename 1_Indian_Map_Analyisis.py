@@ -52,7 +52,6 @@ for i in Transaction_districts['Total_Transactions_count']:
     Total_Transaction.append(i)
 Geo_Dataset['Total_Transactions']=Total_Transaction
 Geo_Dataset['Year_Quarter']=str(year)+'-Q'+str(quarter)
-# Dynamic Coropleth
 Coropleth_Dataset = Coropleth_Dataset.sort_values(by=['state'], ascending=False)
 Transaction_Coropleth_States = Transaction_Coropleth_States.sort_values(by=['Place_Name'], ascending=False)
 Total_Amount=[]
@@ -63,8 +62,7 @@ Total_Transaction=[]
 for i in Transaction_Coropleth_States['Total_Transactions_count']:
     Total_Transaction.append(i)
 Coropleth_Dataset['Total_Transactions']=Total_Transaction
-# -------------------------------------FIGURE1 INDIA MAP------------------------------------------------------------------
-#scatter plotting the states codes 
+# -------------------------------------FIGURE1 INDIA MAP------------------------------------------------------------------ 
 Indian_States = Indian_States.sort_values(by=['state'], ascending=False)
 Indian_States['Registered_Users']=Coropleth_Dataset['Registered_Users']
 Indian_States['Total_Amount']=Coropleth_Dataset['Total_Amount']
