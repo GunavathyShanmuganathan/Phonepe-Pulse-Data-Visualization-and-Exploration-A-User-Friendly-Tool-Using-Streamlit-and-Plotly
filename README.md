@@ -1,3 +1,4 @@
+
 # Phonepe-Pulse-Data-Visualization-and-Exploration-A-User-Friendly-Tool-Using-Streamlit-and-Plotly1. 
 **Introduction**
     Phonepe-Pulse-Data-Visualization-and-Exploration-A-User-Friendly-Tool-Using-Streamlit-and-Plotly1 is an multipage application which is designed to obtain the insights and information that can be visualized in a user-friendly manner.
@@ -25,3 +26,4 @@ to display the data in an interactive and visually appealing manner.
 -import mysql.connector as sql
 -import plotly.graph_objects as go
 -from plotly.subplots import make_subplots
+![newplot](https://user-images.githubusercontent.com/121713100/224039829-85530fa5-b19a-4ad9-b8ca-4c2b9fb8fce7.png)
