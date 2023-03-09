@@ -26,4 +26,6 @@ to display the data in an interactive and visually appealing manner.
 -import mysql.connector as sql
 -import plotly.graph_objects as go
 -from plotly.subplots import make_subplots
+
+**Result**
 ![newplot](https://user-images.githubusercontent.com/121713100/224039829-85530fa5-b19a-4ad9-b8ca-4c2b9fb8fce7.png)
