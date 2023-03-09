@@ -5,7 +5,7 @@
     
 **Steps Involved:**
 1. Extract data from the Phonepe pulse Github repository through scripting and
-clone it..
+clone it.
 2. Transform the data into a suitable format and perform any necessary cleaning
 and pre-processing steps.
 3. Insert the transformed data into a MySQL database for efficient storage and
