@@ -25,7 +25,6 @@ Map_Transaction_df = pd.read_csv(r'C:/Users/User/datasets/PhonePe-Pulse-Data-201
 Map_User_Table= pd.read_csv(r'C:/Users/User/datasets/PhonePe-Pulse-Data-2018-2022-Analysis/data/DMU.csv')
 #Indian_States= pd.read_csv(r'data/Longitude_Latitude_State_Table.csv')
 st.write('<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Transaction Analysis</div>',unsafe_allow_html=True)
-
 c1,c2=st.columns(2)
 with c1:
     Year = st.selectbox(
@@ -61,6 +60,7 @@ with col2:
         'nagaland', 'odisha', 'puducherry', 'punjab', 'rajasthan',
         'sikkim', 'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
         'uttarakhand', 'west-bengal'),key='b')
+st.write('<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Statewise Analysis</div>',unsafe_allow_html=True)
 State= state
 Year_List=[2018,2019,2020,2021,2022]
 Mode=mode
@@ -71,11 +71,12 @@ State_PaymentMode["Quarter"] = "Q"+State_PaymentMode['Quarter'].astype(str)
 State_PaymentMode["Year_Quarter"] = State_PaymentMode['Year'].astype(str) +"-"+ State_PaymentMode["Quarter"].astype(str)
 fig = px.bar(State_PaymentMode, x='Year_Quarter', y='Total_Transactions_count',color="Total_Transactions_count",
                  color_continuous_scale="jet_r")
+with st.expander("Show Bar graph representation "):
 
-st.write('#### '+State.upper()) 
-st.plotly_chart(fig,use_container_width=True)
+  st.write('#### '+State.upper()) 
+  st.plotly_chart(fig,use_container_width=True)
 
-st.info(
+  st.info(
         """
         Details of BarGraph:
         - State Transaction details
@@ -83,6 +84,7 @@ st.info(
         - Y Axis represents total transactions in selected mode 
         """
         )
+st.write('<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Districtwise Analysis</div>',unsafe_allow_html=True)
 col1, col2, col3= st.columns(3)
 with col1:
         Year = st.selectbox(
@@ -109,11 +111,11 @@ districts=Map_Transaction_df.loc[(Map_Transaction_df['State'] == state ) & (Map_
 l=len(districts)    
 fig = px.bar(districts, x='Place_Name', y='Total_Transactions_count',color="Total_Transactions_count",
                  color_continuous_scale="Viridis")   
+with st.expander("Show Bar graph representation "):
+   st.write('#### '+state.upper()+' WITH '+str(l)+' DISTRICTS')
+   st.plotly_chart(fig,use_container_width=True)
 
-st.write('#### '+state.upper()+' WITH '+str(l)+' DISTRICTS')
-st.plotly_chart(fig,use_container_width=True)
-
-st.info(
+   st.info(
         """
         Details of BarGraph:
         - X Axis represents the districts of selected state
@@ -144,10 +146,10 @@ del Year_PaymentMode_Table['Year']
 Year_PaymentMode_Table = Year_PaymentMode_Table.sort_values(by=['Total_Transactions_count'])
 fig2= px.bar(Year_PaymentMode_Table, x='states', y='Total_Transactions_count',color="Total_Transactions_count",
                 color_continuous_scale="Viridis",)   
-
-st.write('#### '+str(Year)+' DATA ANALYSIS')
-st.plotly_chart(fig2,use_container_width=True) 
-st.info(
+with st.expander("Show Bar graph representation "):
+   st.write('#### '+str(Year)+' DATA ANALYSIS')
+   st.plotly_chart(fig2,use_container_width=True) 
+   st.info(
         """
         Details of BarGraph:
         - X Axis represents the states in increasing order based on Total transactions
@@ -159,10 +161,12 @@ years_List=Aggregated_Transaction['Year'].unique()
 years_Table=years.sum()
 del years_Table['Quarter']
 years_Table['year']=years_List
-total_trans=years_Table['Total_Transactions_count'].sum() # this data is used in sidebar    
+total_trans=years_Table['Total_Transactions_count'].sum() # this data is used in sidebar 
+st.write( '<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Increase in Transaction</p>',unsafe_allow_html=True)   
 fig1 = px.pie(years_Table, values='Total_Transactions_count', names='year',color_discrete_sequence=px.colors.sequential.Viridis, title='TOTAL TRANSACTIONS (2018 TO 2022)')
-st.write( '<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Increase in Transaction</p>',unsafe_allow_html=True)
-st.plotly_chart(fig1)  
+with st.expander("Show Pie graph representation "):
+       st.plotly_chart(fig1)  
 st.write('<p style="color:#DC143C;font-size:40px;font:bold;text-align:center">Year Wise Transaction Analysis in India</p>',unsafe_allow_html=True)      
-st.markdown(years_Table.style.hide(axis="index").to_html(), unsafe_allow_html=True)
+with st.expander("Show the Table"):
+      st.markdown(years_Table.style.hide(axis="index").to_html(), unsafe_allow_html=True)
      
