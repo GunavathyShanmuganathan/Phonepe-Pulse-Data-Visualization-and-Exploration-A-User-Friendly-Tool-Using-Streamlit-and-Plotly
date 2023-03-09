@@ -1,5 +1,5 @@
 
-# Phonepe-Pulse-Data-Visualization-and-Exploration-A-User-Friendly-Tool-Using-Streamlit-and-Plotly1. 
+# Phonepe-Pulse-Data-Visualization-and-Exploration-A-User-Friendly-Tool-Using-Streamlit-and-Plotly. 
 **Introduction**
     Phonepe-Pulse-Data-Visualization-and-Exploration-A-User-Friendly-Tool-Using-Streamlit-and-Plotly is an multipage application which is designed to obtain the insights and information that can be visualized in a user-friendly manner.
     
