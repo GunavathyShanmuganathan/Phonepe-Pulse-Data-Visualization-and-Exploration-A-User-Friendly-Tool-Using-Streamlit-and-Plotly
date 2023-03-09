@@ -74,15 +74,15 @@ with tab2:
     with col2:
         state = st.selectbox(
         'Please select the State',
-        ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
-        'assam', 'bihar', 'chandigarh', 'chhattisgarh',
-        'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
-        'haryana', 'himachal-pradesh', 'jammu-&-kashmir',
-        'jharkhand', 'karnataka', 'kerala', 'ladakh', 'lakshadweep',
-        'madhya-pradesh', 'maharashtra', 'manipur', 'meghalaya', 'mizoram',
-        'nagaland', 'odisha', 'puducherry', 'punjab', 'rajasthan',
-        'sikkim', 'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
-        'uttarakhand', 'west-bengal'),key='dk2')
+        ('Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
+        'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
+        'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
+        'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir',
+        'Jharkhand', 'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep',
+        'Madhya-pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland', 'Odisha', 'Puducherry', 'Punjab', 'Rajasthan',
+        'Sikkim', 'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
+        'Uttarakhand', 'West-bengal'),key='dk2')
     with col3:
         Quarter = st.selectbox(
             'Please select the Quarter',
@@ -117,15 +117,15 @@ with tab3:
     with col1:
         state = st.selectbox(
         'Please select the State',
-        ('india','andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
-        'assam', 'bihar', 'chandigarh', 'chhattisgarh',
-        'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
-        'haryana', 'himachal-pradesh', 'jammu-&-kashmir',
-        'jharkhand', 'karnataka', 'kerala', 'ladakh', 'lakshadweep',
-        'madhya-pradesh', 'maharashtra', 'manipur', 'meghalaya', 'mizoram',
-        'nagaland', 'odisha', 'puducherry', 'punjab', 'rajasthan',
-        'sikkim', 'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
-        'uttarakhand', 'west-bengal'),key='Z')
+        ('India','Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
+        'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
+        'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
+        'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir',
+        'Jharkhand', 'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep',
+        'Madhya-pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram',
+        'Nagaland', 'Odisha', 'Puducherry', 'Punjab', 'Rajasthan',
+        'Sikkim', 'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
+        'Uttarakhand', 'West-bengal'),key='Z')
     with col2:
         Y = st.selectbox(
         'Please select the Year',
