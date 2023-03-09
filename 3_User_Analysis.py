@@ -52,24 +52,18 @@ with tab1:
     sout['AppOpenings']=sout['AppOpenings'].mul(100/ta)
     sout['Registered_Users']=sout['Registered_Users'].mul(100/tr).copy()
     fig = go.Figure(data=[
-        go.Bar(name='AppOpenings %', y=sout['AppOpenings'], x=sout['state_year'], marker={'color': 'Gold'}),
-        go.Bar(name='Registered Users %', y=sout['Registered_Users'], x=sout['state_year'],marker={'color': 'OrangeRed'})
+        go.Scatter(name='AppOpenings %', y=sout['AppOpenings'], x=sout['state_year'], marker={'color': 'Gold'}),
+        go.Scatter(name='Registered Users %', y=sout['Registered_Users'], x=sout['state_year'],marker={'color': 'OrangeRed'})
     ])
-    # Change the bar mode
-    fig.update_layout(barmode='group')
     st.write("#### ",state.upper())
     st.plotly_chart(fig, use_container_width=True, height=200)
     st.info(
         """
-        Details of BarGraph:
+        Details of Graph:
         - The X Axis shows both Registered users and App openings 
         - The Y Axis shows the Percentage of Registered users and App openings
         - User can observe the increasing rate of App openings and Registered users in state
-        """
-        
-        
-    
-        )
+        """)
 # ==================================================U DISTRICT ANALYSIS ====================================================
 with tab2:
     col1, col2, col3= st.columns(3)
@@ -200,7 +194,5 @@ with tab3:
         st.info(
             """
             Important Observation:
-            -  We can see that the Registered Users and App openings are increasing year by year
-            
-            """
+            -  We can see that the Registered Users and App openings are increasing year by year """
             )
