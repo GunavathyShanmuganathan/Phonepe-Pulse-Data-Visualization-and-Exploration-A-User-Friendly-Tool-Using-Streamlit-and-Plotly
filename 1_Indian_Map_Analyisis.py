@@ -113,9 +113,9 @@ st.info(
     - Hover data will show the details like Total transactions, Total amount
     """
     )
-# -----------------------------------------------FIGURE2 HIDDEN BARGRAPH------------------------------------------------------------------------
+# -----------------------------------------------FIGURE2 HIDDEN SCATTER GRAPH------------------------------------------------------------------------
 Coropleth_Dataset = Coropleth_Dataset.sort_values(by=['Total_Transactions'])
-fig = px.bar(Coropleth_Dataset, x='state', y='Total_Transactions',title=str(year)+" Quarter-"+str(quarter))
-with st.expander(" Bar graph representation "):
+fig = px.scatter(Coropleth_Dataset, x='state', y='Total_Transactions',title=str(year)+" Quarter-"+str(quarter),color="state")
+with st.expander(" Scatter graph representation "):
     st.plotly_chart(fig, use_container_width=True)
-    st.write('<p style="color:#191970;">The above bar graph shows the higher transaction of States using Phonepe</p>',unsafe_allow_html=True)
+    st.write('<p style="color:#191970;">The above graph shows the higher transaction of States using Phonepe</p>',unsafe_allow_html=True)
