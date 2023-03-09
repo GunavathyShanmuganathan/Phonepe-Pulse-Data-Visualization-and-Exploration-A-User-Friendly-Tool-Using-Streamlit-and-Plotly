@@ -75,8 +75,8 @@ fig=px.scatter_geo(Indian_States,
                     hover_name="state", 
                     hover_data=['Total_Amount',"Total_Transactions","Year_Quarter"],
                     )
-fig.update_traces(marker=dict(color="white" ,size=0.3))
-fig.update_geos(fitbounds="locations", visible=False,)
+fig.update_traces(marker=dict(color="white" ,size=0.4))
+fig.update_geos(fitbounds="locations", visible=False)
     # scatter plotting districts
 Geo_Dataset['col']=Geo_Dataset['Total_Transactions']
 fig1=px.scatter_geo(Geo_Dataset,
@@ -88,18 +88,18 @@ fig1=px.scatter_geo(Geo_Dataset,
                     hover_name="District", 
                     hover_data=["State", "Total_Amount","Total_Transactions","Year_Quarter"],
                     title='District',
-                    size_max=22)
+                    size_max=15)
 fig1.update_layout(margin={"t": 30, "b": 0, "l": 0, "r": 0}, width=1200, height=3600)
-fig1.update_traces(marker=dict(color="#e377c2" ,line_width=1))   
+fig1.update_traces(marker=dict(symbol="triangle-up".color="#000000" ,line_width=1))   
 #coropleth mapping india
 fig_ch = px.choropleth(
                     Coropleth_Dataset,
                     geojson="https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson",
                     featureidkey='properties.ST_NM',                
                     locations='state',
-                    color="Total_Transactions",                                       
+                    color="Total_Transactions",color_continuous_scale="turbo"                                       
                     )
-fig_ch.update_geos(fitbounds="locations", visible=True,)
+fig_ch.update_geos(fitbounds="locations", visible=False)
 #combining districts states and coropleth
 fig_ch.add_trace( fig.data[0])
 fig_ch.add_trace(fig1.data[0])
@@ -109,7 +109,7 @@ st.info(
     Important Observations:
     - User can observe the Transactions of PhonePe in both State and Districtwide for the given year and quarter.
     - Colors represent the State wide Transaction.
-    - Cicles Represents the District wide Ptansaction
+    - Cicles Represents the District wide transaction
     - Hover data will show the details like Total transactions, Total amount
     """
     )
@@ -118,5 +118,4 @@ Coropleth_Dataset = Coropleth_Dataset.sort_values(by=['Total_Transactions'])
 fig = px.bar(Coropleth_Dataset, x='state', y='Total_Transactions',title=str(year)+" Quarter-"+str(quarter))
 with st.expander(" Bar graph representation "):
     st.plotly_chart(fig, use_container_width=True)
-    fig.update_layout(coloraxis = {'colorscale':'pinkyl'})
     st.write('<p style="color:#191970;">The above bar graph shows the higher transaction of States using Phonepe</p>',unsafe_allow_html=True)
